@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useAuth } from "@/contexts/AuthContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +13,14 @@ const Index: React.FC = () => {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Secure Authentication System — login-gate-keeper</title>
+        <meta name="description" content="A robust authentication demo with user registration, secure login, and protected dashboard content." />
+        <link rel="canonical" href="https://login-gate-keeper.lovable.app/" />
+        <meta property="og:title" content="Secure Authentication System — login-gate-keeper" />
+        <meta property="og:description" content="A robust authentication demo with user registration, secure login, and protected dashboard content." />
+        <meta property="og:url" content="https://login-gate-keeper.lovable.app/" />
+      </Helmet>
       <Header />
       
       <main className="flex-1">
