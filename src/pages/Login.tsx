@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useAuth } from "@/contexts/AuthContext";
 import AuthForm from "@/components/AuthForm";
 import Header from "@/components/Header";
@@ -26,10 +27,19 @@ const Login: React.FC = () => {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Sign In — login-gate-keeper</title>
+        <meta name="description" content="Sign in to your login-gate-keeper account to access your secure dashboard." />
+        <link rel="canonical" href="https://login-gate-keeper.lovable.app/login" />
+        <meta property="og:title" content="Sign In — login-gate-keeper" />
+        <meta property="og:description" content="Sign in to your login-gate-keeper account to access your secure dashboard." />
+        <meta property="og:url" content="https://login-gate-keeper.lovable.app/login" />
+      </Helmet>
       <Header />
-      
+
       <main className="flex-1 flex items-center justify-center p-4 bg-gray-50">
         <div className="w-full max-w-md">
+          <h1 className="sr-only">Sign in to AuthSystem</h1>
           <AuthForm
             type="login"
             onSubmit={handleSubmit}
